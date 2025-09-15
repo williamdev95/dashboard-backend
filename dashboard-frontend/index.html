@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Profissional</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div id="alerta-erro" class="alerta-erro" style="display: none">
+      ⚠️ Erro ao carregar dados do servidor. Tente novamente mais tarde.
+    </div>
+    <!-- Cabeçalho -->
+    <header>
+      <h1>📊 Dashboard de Vendas</h1>
+    </header>
+
+    <main>
+      <!-- Cards -->
+      <section class="cards">
+        <div class="card">
+          <h3>Total de Vendas</h3>
+          <p id="totalVendas">0</p>
+        </div>
+        <div class="card">
+          <h3>Valor Total</h3>
+          <p id="valorTotal">R$ 0,00</p>
+        </div>
+      </section>
+
+      <!-- Gráfico -->
+      <section id="graficos">
+        <h2>Análise de Vendas</h2>
+        <!-- Filtro por produto -->
+        <div class="filtro-container">
+          <label for="filtroProduto">Filtrar por produto:</label>
+          <select id="filtroProduto">
+            <option value="todos">Todos</option>
+            <!-- Produtos serão preenchidos via JS -->
+          </select>
+        </div>
+
+        <div class="grafico-container">
+          <canvas id="graficoBarras"></canvas>
+        </div>
+      </section>
+      <!-- Filtro de Período -->
+      <section id="filtro">
+        <h2>Filtrar por Período</h2>
+        <form id="formFiltro">
+          <label for="dataInicio">De:</label>
+          <input type="date" id="dataInicio" name="dataInicio" required />
+
+          <label for="dataFim">Até:</label>
+          <input type="date" id="dataFim" name="dataFim" required />
+
+          <button type="submit">Aplicar</button>
+        </form>
+      </section>
+
+      <!-- Tabela -->
+      <section id="lista">
+        <h2>Lista de Vendas</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Produto</th>
+              <th>Quantidade</th>
+              <th>Valor (R$)</th>
+            </tr>
+          </thead>
+          <tbody id="tabelaVendas">
+            <!-- Preenchido dinamicamente pelo JS -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+      <p>Dashboard desenvolvido por William 🚀</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,323 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* ===== Cabeçalho ===== */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+/* ===== Cards ===== */
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: 40px auto;
+  max-width: 900px;
+}
+
+.card {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  color: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  width: 240px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.card p {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* ===== Centralização de Títulos ===== */
+h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #1e3a8a;
+}
+
+/* ===== Gráfico ===== */
+.grafico-container {
+  margin: 40px auto;
+  max-width: 700px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.grafico-container h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #1e3a8a;
+}
+
+#graficoBarras {
+  max-width: 100%;
+  height: 350px;
+}
+
+/* ===== Tabela de Vendas ===== */
+#lista {
+  margin: 40px auto;
+  max-width: 900px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#lista h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #1e3a8a;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f0f0f0;
+}
+
+thead {
+  background-color: #1e3a8a;
+  color: #fff;
+}
+
+thead th {
+  padding: 12px;
+  text-align: center;
+}
+
+tbody td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+  background-color: #e2e8f0;
+}
+
+/* ===== Rodapé ===== */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .grafico-container,
+  #lista {
+    width: 100%;
+  }
+}
+/* ===== Responsividade Avançada ===== */
+@media (max-width: 600px) {
+  /* Cards em coluna e centralizados */
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%; /* ocupa quase toda a largura */
+  }
+
+  /* Gráfico menor e responsivo */
+  .grafico-container {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  #graficoBarras {
+    height: 250px !important; /* reduz altura em telas pequenas */
+  }
+
+  /* Tabela com rolagem horizontal */
+  #lista {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 500px; /* garante que as colunas não fiquem espremidas */
+  }
+}
+/* ===== Barra de Alerta ===== */
+.alerta-erro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #dc2626; /* Vermelho forte */
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  z-index: 9999;
+}
+/* ===== Filtro ===== */
+.filtro-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filtro-container label {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #1e3a8a;
+}
+
+.filtro-container select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+/* ===== Filtro ===== */
+#filtro {
+  margin: 30px auto;
+  max-width: 900px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#filtro h2 {
+  margin-bottom: 15px;
+  color: #1e3a8a;
+}
+
+#filtro form {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+#filtro input,
+#filtro button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+#filtro button {
+  background-color: #1e3a8a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#filtro button:hover {
+  background-color: #3b82f6;
+}
+/* ===== Refinamento do Design ===== */
+
+/* Botões */
+button {
+  background-color: #1e3a8a;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #2563eb;
+  transform: scale(1.05);
+}
+
+/* Inputs */
+input[type="date"],
+select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type="date"]:focus,
+select:focus {
+  border-color: #1e3a8a;
+}
+
+/* Seções de filtros */
+.filtro-container,
+#filtro {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  margin: 20px auto;
+  max-width: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Linhas da tabela ao passar o mouse */
+tbody tr:hover {
+  background-color: #e0ebff;
+  cursor: pointer;
+}
+
+/* Cabeçalhos alinhados */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e3a8a;
+}
